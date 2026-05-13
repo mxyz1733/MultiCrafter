@@ -1,8 +1,11 @@
 package mxyz1733mods.ui;
 
 import arc.Core;
+import mindustry.content.Items;
+import mindustry.content.Liquids;
 import mindustry.gen.Icon;
 import mindustry.gen.Tex;
+import mindustry.type.Liquid;
 import mindustry.ui.Styles;
 import mindustry.ui.dialogs.BaseDialog;
 
@@ -23,7 +26,9 @@ public class MultiCrafterEditorDialog extends BaseDialog {
 
         // 主体部分
         cont.table(Tex.pane,main -> {
-            main.add("TODO").grow();
+//            main.add("TODO").grow();
+            main.add(new ContentDisplay(Items.copper, 1_000_000_000));
+            main.add(new ContentDisplay(Liquids.slag, 1_000_000_000));
         }).grow();
 
         closeOnBack();
