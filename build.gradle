@@ -51,10 +51,7 @@ allprojects{
 }
 
 dependencies{
-    def useLatest = false //set to "true" to always depend on the newest version of mindustry
-
-    compileOnly useLatest ? "Anuken:MindustryBuilds:latest" : "Anuken:Mindustry:$mindustryVersion"
-
+    compileOnly files("C:\\Users\\30623\\Steam\\steamapps\\common\\Mindustry\\jre\\desktop.jar")
     annotationProcessor "Anuken:jabel:v1.0.0"
 }
 
@@ -71,7 +68,7 @@ tasks.register('jarAndroid'){
         //collect dependencies needed for desugaring
         def dependencies = (configurations.compileClasspath.asList() + configurations.runtimeClasspath.asList() + [new File(platformRoot, "android.jar")]).collect{ "--classpath $it.path" }.join(" ")
 
-        def d8 = isWindows ? "d8.bat" : "d8"
+        def d8 = isWindows ? "C:\\\\Users\\\\30623\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\build-tools\\\\36.0.0\\\\d8.bat" : "d8"
 
         //dex and desugar files - this requires d8 in your PATH
         "$d8 $dependencies --min-api 14 --output ${project.name}Android.jar ${project.name}Desktop.jar"
