@@ -1,4 +1,4 @@
-package example;
+package mxyz1733mods;
 
 import arc.*;
 import arc.util.*;
@@ -17,8 +17,8 @@ public class MultiCrafterMod extends Mod{
             Time.runTask(10f, () -> {
                 BaseDialog dialog = new BaseDialog("frog");
                 dialog.cont.add("behold").row();
-                //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
-                dialog.cont.image(Core.atlas.find("example-java-mod-frog")).pad(20f).row();
+                //mod sprites are prefixed with the mod name (this mod is called 'mxyz1733mods-java-mod' in its config)
+                dialog.cont.image(Core.atlas.find("mxyz1733mods-java-mod-frog")).pad(20f).row();
                 dialog.cont.button("I see", dialog::hide).size(100f, 50f);
                 dialog.show();
             });
@@ -27,7 +27,7 @@ public class MultiCrafterMod extends Mod{
 
     @Override
     public void loadContent() {
-        Log.info("Loading some example content.");
+        Log.info("Loading some mxyz1733mods content.");
     }
 
 }
