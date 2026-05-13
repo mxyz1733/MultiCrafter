@@ -6,10 +6,10 @@ import mindustry.game.EventType.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
 
-public class ExampleJavaMod extends Mod{
+public class MultiCrafterMod extends Mod{
 
-    public ExampleJavaMod(){
-        Log.info("Loaded ExampleJavaMod constructor.");
+    public MultiCrafterMod(){
+        Log.info("Loaded MultiCrafterMod constructor.");
 
         //listen for game load event
         Events.on(ClientLoadEvent.class, e -> {
@@ -26,7 +26,7 @@ public class ExampleJavaMod extends Mod{
     }
 
     @Override
-    public void loadContent(){
+    public void loadContent() {
         Log.info("Loading some example content.");
     }
 
