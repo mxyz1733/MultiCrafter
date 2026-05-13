@@ -1,17 +1,18 @@
 package mxyz1733mods.ui;
 
-import arc.Core;
-import mindustry.content.Items;
-import mindustry.content.Liquids;
+import arc.struct.Seq;
 import mindustry.gen.Icon;
 import mindustry.gen.Tex;
-import mindustry.type.Liquid;
 import mindustry.ui.Styles;
 import mindustry.ui.dialogs.BaseDialog;
+import mxyz1733mods.world.meta.MCMRecipe;
 
 public class MultiCrafterEditorDialog extends BaseDialog {
-    public MultiCrafterEditorDialog() {
+    private final Seq<MCMRecipe> recipes;
+
+    public MultiCrafterEditorDialog(Seq<MCMRecipe> recipes) {
         super("@multi-crafter-editor-dialog");
+        this.recipes = recipes;
     }
 
     public void rebuild() {
@@ -26,9 +27,9 @@ public class MultiCrafterEditorDialog extends BaseDialog {
 
         // 主体部分
         cont.table(Tex.pane,main -> {
-//            main.add("TODO").grow();
-            main.add(new ContentDisplay(Items.copper, 1_000_000_000));
-            main.add(new ContentDisplay(Liquids.slag, 1_000_000_000));
+            for (MCMRecipe recipe : recipes) {
+                main.add(new MCMRecipeDisplay(recipe)).growX().row();
+            }
         }).grow();
 
         closeOnBack();

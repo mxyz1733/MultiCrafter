@@ -13,17 +13,17 @@ import mindustry.ui.Styles;
 import mindustry.world.meta.StatValues;
 
 public class ContentDisplay extends Table {
-    public ContentDisplay(@Nullable UnlockableContent content, int amount) {
+    public ContentDisplay(@Nullable UnlockableContent content, float amount) {
         rebuild(content, amount);
     }
 
-    private void rebuild(@Nullable UnlockableContent content, int amount) {
+    private void rebuild(@Nullable UnlockableContent content, float amount) {
         clear();
         top().left().margin(0.0F);
         add(stack(content, amount, true));
     }
 
-    private static Stack stack(@Nullable UnlockableContent content, int amount, boolean tooltip) {
+    private static Stack stack(@Nullable UnlockableContent content, float amount, boolean tooltip) {
         Stack stack = new Stack();
         stack.add(new Table(o -> {
             o.left();
