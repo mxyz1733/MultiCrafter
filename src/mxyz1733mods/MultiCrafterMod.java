@@ -5,6 +5,7 @@ import arc.util.*;
 import mindustry.game.EventType.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
+import mxyz1733mods.content.MCMBlocks;
 
 public class MultiCrafterMod extends Mod{
 
@@ -27,7 +28,7 @@ public class MultiCrafterMod extends Mod{
 
     @Override
     public void loadContent() {
-        Log.info("Loading some mxyz1733mods content.");
+        MCMBlocks.load();
     }
 
 }
